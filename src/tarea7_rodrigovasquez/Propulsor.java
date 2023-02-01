@@ -1,6 +1,7 @@
 package tarea7_rodrigovasquez;
 
 public class Propulsor {
+
     private int peso, velocidad;
     private String material;
 
@@ -17,16 +18,26 @@ public class Propulsor {
         return peso;
     }
 
-    public void setPeso(int peso) {
-        this.peso = peso;
+    public int setPeso(int peso) {
+        if (peso > 0) {
+            this.peso = peso;
+            return 0;
+        } else {
+            return -1;
+        }
     }
 
     public int getVelocidad() {
         return velocidad;
     }
 
-    public void setVelocidad(int velocidad) {
-        this.velocidad = velocidad;
+    public int setVelocidad(int velocidad) {
+        if (velocidad > 0) {
+            this.velocidad = velocidad;
+            return 0;
+        } else {
+            return -1;
+        }
     }
 
     public String getMaterial() {
@@ -37,11 +48,17 @@ public class Propulsor {
         this.material = material;
     }
 
+//    public int numPropulsor(int num, int acum) {
+//        if (acum + num <= 4) {
+//            acum += num; 
+//            return 0; 
+//        } else {
+//            return -1;
+//        }
+//    }
     @Override
     public String toString() {
-        return "Propulsor - " + "[Peso: " + peso + ']' + ", [Velocidad: " + velocidad + " m/s]" + ", [Material: " + material + ']';
+        return "Propulsor - " + "[Peso: " + peso + " kg]" + ", [Velocidad: " + velocidad + " m/s]" + ", [Material: " + material + "]\n";
     }
-    
-    
-    
+
 }

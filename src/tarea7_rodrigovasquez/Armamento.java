@@ -26,21 +26,31 @@ public class Armamento {
         return peso;
     }
 
-    public void setPeso(int peso) {
-        this.peso = peso;
+    public int setPeso(int peso, int pesoTot) {
+        if (peso > 0 && pesoTot <= 200) {
+            this.peso = peso;
+            return 0;
+        } else {
+            return -1;
+        }
     }
 
     public int getPoder() {
         return poder;
     }
 
-    public void setPoder(int poder) {
-        this.poder = poder;
+    public int setPoder(int poder) {
+        if (poder > 0 && poder < 11) {
+            this.poder = poder;
+            return 0;
+        } else {
+            return -1;
+        }
     }
 
     @Override
     public String toString() {
-        return "Armamento - " + "[Nombre del arma:" + nombre + ", [Peso: " + peso + " Tn]" + ", poder=" + poder + '}';
+        return "Armamento - " + "[Nombre del arma:" + nombre + ", [Peso: " + peso + " kg]" + ", [Poder: " + poder + "]";
     }
 
 }
